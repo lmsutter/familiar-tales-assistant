@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useCallback, useState } from "react";
+import styled from "styled-components";
+import Header from "./Header/Header";
+import componentMap from "./Views/componentMap";
+import { componentMapType } from "./Views/componentMap";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [view, setView] = useState<componentMapType>("Main");
+  const [history, setHistory] = useState<componentMapType[]>([]);
+
+  const changeView = useCallback(
+    (newView: componentMapType) => {
+      setView(newView);
+      setHistory((p) => {
+        const temp = [...p];
+        temp.push(newView);
+        return temp;
+      });
+    },
+    [view, history]
+  );
+
+  const Component = componentMap[view];
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <Container>
+      <Header
+        setHistory={setHistory}
+        changeView={changeView}
+        setView={setView}
+        history={history}
+      />
+      <Component changeView={changeView} setView={setView} />
+      {history.map((item) => (
+        <p>{item}</p>
+      ))}
+    </Container>
+  );
 }
 
-export default App
+const Container = styled.main``;
+
+export default App;
