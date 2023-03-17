@@ -23,14 +23,19 @@ const GlobalStyle = createGlobalStyle`
         font-size: 10px;
         font-size: 1.6rem;
         margin: 0;
-        background-image: linear-gradient(
-            180deg,
-            hsl(130deg 11% 11%) 0%,
-            hsl(129deg 14% 15%) 50%,
-            hsl(128deg 15% 19%) 100%
-        );
-        color:#E2E8E2;
+        background-color: navy;
+        
+        color: rgb(230, 248, 250);
+        padding: 1rem;
+        position: relative;
        
+    }
+
+    button {
+        border: none;
+        background-color: rgba(0, 0, 0, 0);
+        color: rgb(230, 248, 250);
+        cursor: pointer;
     }
 
 
