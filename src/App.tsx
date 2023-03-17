@@ -6,14 +6,14 @@ import { componentMapType } from "./Views/componentMap";
 
 function App() {
   const [view, setView] = useState<componentMapType>("Main");
-  const [history, setHistory] = useState<componentMapType[]>([]);
+  const [appHistory, setHistory] = useState<componentMapType[]>([]);
 
   const changeView = useCallback(
     (newView: componentMapType) => {
       setView(newView);
       setHistory((p) => {
         const temp = [...p];
-        temp.push(newView);
+        temp.unshift(newView);
         return temp;
       });
     },
@@ -28,12 +28,9 @@ function App() {
         setHistory={setHistory}
         changeView={changeView}
         setView={setView}
-        history={history}
+        appHistory={appHistory}
       />
       <Component changeView={changeView} setView={setView} />
-      {history.map((item) => (
-        <p>{item}</p>
-      ))}
     </Container>
   );
 }

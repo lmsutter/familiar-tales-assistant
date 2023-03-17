@@ -8,20 +8,20 @@ function Back(
   props: React.SVGProps<SVGSVGElement> &
     ViewPropType & {
       setHistory: React.Dispatch<React.SetStateAction<componentMapType[]>>;
-      history: componentMapType[];
+      appHistory: componentMapType[];
     }
 ) {
-  const { setHistory, setView, history } = props;
+  const { setHistory, setView, appHistory } = props;
+  console.log(appHistory);
   const handleBack = () => {
-    console.log(history.at(-2));
     setView((p) => {
-      if (history.at(-2) !== undefined) {
-        return history.at(-2) || "Main";
-      } else "Main";
+      if (appHistory.length > 1) {
+        return appHistory.at(-2) || "Main";
+      } else return "Main";
     });
     setHistory((p) => {
       const temp = [...p];
-      temp.pop();
+      temp.shift();
       return temp;
     });
   };

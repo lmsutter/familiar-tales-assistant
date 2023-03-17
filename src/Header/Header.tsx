@@ -9,15 +9,15 @@ import { componentMapType } from "../Views/componentMap";
 const Header = (
   props: ViewPropType & {
     setHistory: React.Dispatch<React.SetStateAction<componentMapType[]>>;
-    history: componentMapType[];
+    appHistory: componentMapType[];
   }
 ) => {
-  const { history } = props;
+  const { appHistory } = props;
   return (
     <Container>
-      <Back {...props} history={history} />
+      <Back {...props} appHistory={appHistory} />
       <Home {...props} />
-      <History {...props} />
+      <History {...props} appHistory={appHistory} />
     </Container>
   );
 };
