@@ -24,17 +24,35 @@ function App() {
 
   return (
     <Container>
-      <Header
-        setHistory={setHistory}
-        changeView={changeView}
-        setView={setView}
-        appHistory={appHistory}
-      />
-      <Component changeView={changeView} setView={setView} />
+      <HeaderContainer>
+        <Header
+          setHistory={setHistory}
+          changeView={changeView}
+          setView={setView}
+          appHistory={appHistory}
+        />
+      </HeaderContainer>
+      <ComponentContainer>
+        <Component changeView={changeView} setView={setView} />
+      </ComponentContainer>
     </Container>
   );
 }
 
-const Container = styled.main``;
+const Container = styled.main`
+  display: grid;
+  height: calc(100vh - 4rem);
+  overflow-y: auto;
+  grid-template-rows: 80px 1fr;
+`;
 
+const HeaderContainer = styled.div`
+  grid-template-columns: 1 / 2;
+  grid-template-rows: 1 / 2;
+`;
+
+const ComponentContainer = styled.div`
+  overflow-y: auto;
+  grid-template-rows: 2 / 3;
+`;
 export default App;

@@ -26,7 +26,6 @@ const Container = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 80px;
 `;
 
 export default Header;

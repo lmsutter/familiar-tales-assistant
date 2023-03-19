@@ -2,19 +2,22 @@ import React, { PropsWithChildren, useState } from "react";
 import styled from "styled-components";
 import ToolTip from "../Icons/ToolTip";
 import FlickerMovement from "../assets/FlickerMovement.jpg";
+import MeleeExample from "../assets/MeleeExample.jpeg";
+import RangedExample from "../assets/RangedExample.jpeg";
 import ReactDom from "react-dom";
-
-type ContentType = "skillTest" | "movementExample";
 
 interface TooltipPropsType {
   type: ContentType;
 }
 
-const toolTipContentMap: Record<ContentType, any> = {
+const toolTipContentMap = {
   skillTest:
     "A skill test is a certain set of steps that determines whether or not you are able to successfully do an action. A Skill test will always have a skill type. The steps include 1. Playing cards to reach a certain value, 2. Resolving card effects (in upper left, optional), 3. asking for help (optional), and 4. Rolling the purple dice and resolving",
   movementExample: <img src={FlickerMovement} />,
+  meleeExample: <img src={MeleeExample} />,
+  rangedExample: <img src={RangedExample} />,
 };
+type ContentType = keyof typeof toolTipContentMap;
 
 const modalLocation = document.getElementById("__modal");
 

@@ -17,16 +17,16 @@ const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         min-height: 100vh;
         min-width: 100vw;
-        max-height: 100vh;
-        max-width: 100vw;
+        height: calc(100vh - 4rem);
+
         font-family: 'Mulish', sans-serif;
         font-size: 10px;
         font-size: 1.6rem;
         margin: 0;
-        background-color: navy;
+        background-color: rgb(4, 24, 2);
         
         color: rgb(230, 248, 250);
-        padding: 1rem;
+        padding: 2rem;
         position: relative;
        
     }

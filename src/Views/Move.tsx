@@ -11,7 +11,8 @@ const Move = (props: ViewPropType) => {
     <Container>
       <S.ViewTitle>Moving</S.ViewTitle>
       <S.GeneralText>
-        Moving allows you to get within range of enemies to attack or reach
+        Moving allows you to get within range of enemies to{" "}
+        <Button onClick={() => changeView("Attack")}>attack</Button> or reach
         objectives. It requires you to play and discard cards but is NOT a{" "}
         <Tooltip type="skillTest">skill test</Tooltip>. To move:
       </S.GeneralText>
@@ -30,6 +31,7 @@ const Move = (props: ViewPropType) => {
         </S.ListItem>
         <S.ListItem>Move your familiar to the desired location</S.ListItem>
       </S.OrderedList>
+      <S.Note text="Certain character abilities (found on the large character cards) can affect movement" />
     </Container>
   );
 };

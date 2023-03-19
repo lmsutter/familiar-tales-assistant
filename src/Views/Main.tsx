@@ -24,21 +24,23 @@ const Main = (props: ViewPropType) => {
   );
 };
 
-const Container = styled.section``;
+const Container = styled.section`
+  display: grid;
+  grid-template-rows: auto 1fr;
+`;
 
 const OptionContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
-  margin-top: 3rem;
+  padding: 2rem 0;
 `;
 
 const Option = styled.button`
   font-size: 2rem;
-  padding: 1.5rem 2rem;
   border: 2px solid;
   border-radius: 2rem;
+  padding: 1rem 0;
 `;
 
 export default Main;

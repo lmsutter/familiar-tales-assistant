@@ -16,7 +16,7 @@ function Back(
   const handleBack = () => {
     setView((p) => {
       if (appHistory.length > 1) {
-        return appHistory.at(-2) || "Main";
+        return appHistory.at(2) || "Main";
       } else return "Main";
     });
     setHistory((p) => {
