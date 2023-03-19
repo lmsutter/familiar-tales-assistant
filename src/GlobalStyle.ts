@@ -14,10 +14,15 @@ const GlobalStyle = createGlobalStyle`
     }
     html,
     body {
+        display: flex;
+        flex-direction: column;
         box-sizing: border-box;
-        min-height: 100vh;
+        min-height: 100svh;
         min-width: 100vw;
-        height: calc(100vh - 4rem);
+        height: 100vh;
+        max-height: 100vh;
+        max-height: 100svh;
+        height: -webkit-fill-available;
 
         font-family: 'Mulish', sans-serif;
         font-size: 10px;

@@ -4,7 +4,10 @@ import ToolTip from "../Icons/ToolTip";
 import FlickerMovement from "../assets/FlickerMovement.jpg";
 import MeleeExample from "../assets/MeleeExample.jpeg";
 import RangedExample from "../assets/RangedExample.jpeg";
+import IconEffects from "../assets/IconEffects.jpeg";
+import ItemPowers from "../assets/ItemPowers.jpeg";
 import ReactDom from "react-dom";
+import ForageLocation from "../assets/ForageLocation.jpeg";
 
 interface TooltipPropsType {
   type: ContentType;
@@ -16,6 +19,9 @@ const toolTipContentMap = {
   movementExample: <img src={FlickerMovement} />,
   meleeExample: <img src={MeleeExample} />,
   rangedExample: <img src={RangedExample} />,
+  iconEffects: <img src={IconEffects} />,
+  itemPowersEffects: <img src={ItemPowers} />,
+  forageIcon: <img src={ForageLocation} />,
 };
 type ContentType = keyof typeof toolTipContentMap;
 
@@ -55,6 +61,8 @@ const WrappedChildren = styled.span`
 
 const ToolTipContainer = styled.div`
   width: 100%;
+  max-height: 100vh;
+  max-width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -62,13 +70,20 @@ const ToolTipContainer = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  padding: 1.6rem;
+  padding: 2rem;
 `;
 
 const ToolTipContent = styled.div<{ open: boolean }>`
   background-color: grey;
   padding: 1rem;
   color: white;
+  max-height: 80%;
+  max-width: 90%;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const ToolTipIconWrapper = styled.div`

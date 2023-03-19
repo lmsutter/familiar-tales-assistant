@@ -9,7 +9,7 @@ export const ViewTitle = styled.h1`
 
 export const OrderedList = styled.ol`
   margin-top: 1rem;
-  margin-left: 1.3em;
+  margin-left: 1.5em;
 `;
 
 export const ListItem = styled.li`
@@ -26,7 +26,9 @@ const NoteContainer = styled.div`
   cursor: pointer;
 `;
 
-const NoteText = styled.p``;
+const NoteText = styled.p`
+  text-decoration: underline;
+`;
 
 const NoteContent = styled.p<{ open: boolean }>`
   display: none;

@@ -31,7 +31,7 @@ const Move = (props: ViewPropType) => {
         </S.ListItem>
         <S.ListItem>Move your familiar to the desired location</S.ListItem>
       </S.OrderedList>
-      <S.Note text="Certain character abilities (found on the large character cards) can affect movement" />
+      <S.Note text="Certain character abilities (found on the large character cards) can affect movement. Also, since you don't get any benefits from a skill test, try and save your good cards (cards with high skill values or icon effects) for another time" />
     </Container>
   );
 };

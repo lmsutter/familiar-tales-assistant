@@ -40,19 +40,17 @@ function App() {
 }
 
 const Container = styled.main`
-  display: grid;
-  height: calc(100vh - 4rem);
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  height: -webkit-fill-available;
+  max-height: 95vh;
   grid-template-rows: 80px 1fr;
 `;
 
-const HeaderContainer = styled.div`
-  grid-template-columns: 1 / 2;
-  grid-template-rows: 1 / 2;
-`;
+const HeaderContainer = styled.div``;
 
 const ComponentContainer = styled.div`
-  overflow-y: auto;
-  grid-template-rows: 2 / 3;
+  overflow-y: scroll;
 `;
 export default App;

@@ -27,13 +27,15 @@ const Main = (props: ViewPropType) => {
 const Container = styled.section`
   display: grid;
   grid-template-rows: auto 1fr;
+  overflow-y: auto;
+  padding-right: 5px;
 `;
 
 const OptionContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
   padding: 2rem 0;
+  gap: 1rem;
 `;
 
 const Option = styled.button`
