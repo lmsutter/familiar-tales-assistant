@@ -8,6 +8,7 @@ import IconEffects from "../assets/IconEffects.jpeg";
 import ItemPowers from "../assets/ItemPowers.jpeg";
 import ReactDom from "react-dom";
 import ForageLocation from "../assets/ForageLocation.jpeg";
+import discontent from "../assets/discontent.jpg";
 
 interface TooltipPropsType {
   type: ContentType;
@@ -22,6 +23,9 @@ const toolTipContentMap = {
   iconEffects: <img src={IconEffects} />,
   itemPowersEffects: <img src={ItemPowers} />,
   forageIcon: <img src={ForageLocation} />,
+  power:
+    "Looks like a lightning bolt. gained from defeating enemies or various map objectives. Used to buy new cards",
+  discontent: <img src={discontent} />,
 };
 type ContentType = keyof typeof toolTipContentMap;
 

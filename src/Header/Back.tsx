@@ -12,11 +12,11 @@ function Back(
     }
 ) {
   const { setHistory, setView, appHistory } = props;
-  console.log(appHistory);
   const handleBack = () => {
+    console.log(appHistory);
     setView((p) => {
       if (appHistory.length > 1) {
-        return appHistory.at(2) || "Main";
+        return appHistory.at(1) || "Main";
       } else return "Main";
     });
     setHistory((p) => {

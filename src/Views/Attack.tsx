@@ -34,7 +34,7 @@ const Attack = (props: ViewPropType) => {
           ranged weapon, you are in range with a ranged weapon if you can draw a
           straight line from the semi-opaque circle near the center of your
           location to the semi-opaque circle in your enemy's location without
-          crossing any single or double solid lines.
+          crossing any double solid lines.
             "
           />
           <S.Note
